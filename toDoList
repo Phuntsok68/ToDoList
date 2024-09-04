@@ -1,0 +1,23 @@
+// ToDoList Project
+let myList=[];
+let command='';
+while(command!=='quit'){
+     command=prompt('What would you like to do?');
+     if(command==='new'){
+        let add=prompt('Enter new to do');
+        console.log(`${add} added to the list`);
+        myList.push(add);
+     }else if(command==='list'){
+        console.log('****************');
+        for(let i=0;i<myList.length;i++){
+            console.log(`${i}: ${myList[i]}`);
+        }
+        console.log('****************');
+     }else if(command==='delete'){
+        let index=parseInt(prompt('Enter the index to delete'));
+        console.log('Item deleted!');
+        myList.splice(index,1);
+     }else{
+        console.log('Invalid reponse, please enter a correct one!');
+     }
+}
